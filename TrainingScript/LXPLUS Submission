@@ -1,0 +1,11 @@
+universe  = vanilla
+executable  = ABSOLUTE_PATH_TO_LAUNCHER_SCRIPT.sh
+log		= ABSOLUTE_PATH_TO_LOG_FILE.log
+output	= ABSOLUTE_PATH_TO_STDOUT_FILE.out
+error		= ABSOLUTE_PATH_TO_STDERR_FILE.err
+request_gpus  = 1
+request_memory	= 32000
++MaxRuntime	= 86400
+JobBatchName = myJob
+getenv	= True
+queue 1
