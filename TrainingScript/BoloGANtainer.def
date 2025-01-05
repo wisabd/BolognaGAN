@@ -1,0 +1,81 @@
+BootStrap: docker
+From: ghcr.io/almalinux/9-base:9.4-20240902
+
+%files
+  BoloGAN/requirements.txt /opt/requirements.txt
+
+%post
+  # add EPEL repository
+  dnf install -y epel-release
+
+  dnf install -y \
+    man man-pages \
+    libXpm gcc-c++ \
+    git \
+    root python3-root \
+    python3 python3-pip
+
+  dnf upgrade -y
+
+  # create virtual environment
+  python3 -m venv --system-site-packages /opt/venv
+  source /opt/venv/bin/activate
+
+  # install python packages
+  python3 -m pip install --upgrade pip setuptools
+
+  # tensorflow 2.14 is the last version that supports CUDA 11
+  python3 -m pip install --upgrade --compile -r /opt/requirements.txt
+
+  # clean caches
+  dnf clean all
+  python3 -m pip cache purge
+
+%environment
+  export PATH=/opt/venv/bin:$PATH5
+
+%runscript
+
+  if [ -z "$WORKINGDIR" ] ; then
+    echo "Please set the WORKINGDIR environment variable"
+    exit
+  elif [ -z "$DATADIR" ] ; then
+    echo "Please set the DATADIR environment variable"
+    exit
+  elif [ -z "$CODEDIR" ] ; then
+    echo "Please set the CODEDIR environment variable"
+    exit
+  fi
+
+
+
+  if  [ "$1" = "train" ] ; then
+
+    if [ "$2" = "pions" ] || [ "$2" = "photons" ] ; then
+      echo "Training the model..."
+      LD_LIBRARY_PATH=$BOLOGAN_LD_LIBRARY_PATH:$LD_LIBRARY_PATH
+      PARTICLE_TYPE=$2
+
+      cd $CODEDIR/model
+      source $CODEDIR/model/launch_V2_seed_local.sh
+
+    else
+      echo Invalid particle, please choose "pions" or "photons"
+      exit
+    fi
+  elif [ "$1" = "bestiter" ] ; then
+    if [ "$2" = "pions" ] || [ "$2" = "photons" ] ; then
+      echo "Looking for best iteration..."
+      LD_LIBRARY_PATH=$BOLOGAN_LD_LIBRARY_PATH:$LD_LIBRARY_PATH
+      PARTICLE_TYPE=$2
+
+      cd $CODEDIR/plotting
+      source $CODEDIR/BoloGAN/plotting/find_best_checkpoints_seed_local.sh
+    else
+      echo Invalid particle, please choose "pions" or "photons"
+      exit
+    fi
+  else
+    echo No valid option, please choose "init", "train" or "bestiter"
+    exit
+
