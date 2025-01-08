@@ -1,0 +1,30 @@
+INSTRUCTIONS
+ 
+We'll use the branch "new_batches" of the BoloGANtainer repo. Make sure you have it up-to-date with "git pull origin new_batches".
+In this new version of BoloGANtainer, you don't need to launch training and then launch the evaluation for the best iteration as a second step, you only need to launch training as here it also includes the evaluation of the reduced chisquare.
+ 
+HOW TO RUN TRAINING AND CHISQUARE EVALUATION
+This version requires many arguments to launch training, but you can use this ready-to-use script you find below to do this (replace the paths with your own)(you can put it into a script.sh file and have it launched by a Slurm .x file):
+
+For the first execution, where you only need to test that you can run this software successfully and you want to make sure of this quickly, I advise you to have training only run for STEPS_PER_EXECUTION=1, editing the loop "for steps in ..." accordingly.
+ 
+ 
+GET INTERESTING GRAPHS
+This version of the repo doesn't create plots just through a script, but requires the usage of Tensorboard, a Tensorflow tool that allows you to get interesting plots of your training and interact with them interactively. Here's how to install and use it:
+1. On OPH, create a Python virtual environment: "python3 -m venv .tensorboard_venv". This creates a virtual environment called ".tensorboard_venv" (you can change the name if you prefer), in this way if something goes bad with the installation the mess is only limited to the virtual environment and not the general one;
+2. Activate the virtual environment with "source .tensorboard_venv/bin/activate". If successful, you'll have "(.tensorboard_venv)" appear on the prompt.
+3. Install Tensorboard with "pip install tensorboard".
+ 
+You're now ready to run Tensorboard. After the first installation you'll always need to do "source .tensorboard_venv/bin/activate" in every new shell before using Tensorboard. When you want to leave the virtual environment, simply type "deactivate" ("(.tensorboard_venv)" will disappear).
+ 
+4. Run Tensorboard with "tensorboard --logdir FOLDER_WITH_LOGS", where FOLDER_WITH_LOGS is a directory, called "logs", you have inside your WORKINGDIR (after having run training) that has files Tensorboard can read to make plots (it should be something like "workdirs/tesi/steps_per_execution_1/pions/All/20_25/logs"). In the output you'll get an URL like "http://localhost:6006/ " (if you get another port number, in the commands that follow replace 6006 accordingly).
+TROUBLESHOOTING: it may happen that you get a core dump or a memory error if you run it on a login node. If this happens, enter a compute node interactively and run it from there. You'll need to reactivate the virtual environment with "source .tensorboard_venv/bin/activate".
+ 
+5. The URL of the previous point is such that, if you enter it in a browser, the browser displays Tensorboard interface. The only caveat is that, in this exact way, it would only work if you were launching the commands directly on your PC (or if you could start a browser on the node). We'll now establish a tunnel from the node where you're running Tensorboard to your PC such that you can access anyway Tensorboard via your PC browser as stated at the beginning. In a new shell (keep Tensorboard running on the other one) run the SSH start command but add this "-L 6006:localhost:6006". In this way, what would be accessible on the node through port 6006 will be tunnelled to port 6006 of your PC. After doing this, open your PC web browser and go to "localhost:6006". You'll then be able to access Tensorboard, where you'll find useful plots that you can explore and interact with. Even though it seems to run on your local PC, you're interacting with the node (exactly like, when you're using SSH, you type commands on your PC but they run on the remote resource).
+IF YOU'RE RUNNING ON A COMPUTE NODE BECAUSE THE TROUBLESHOOTING OF THE POINT ABOVE WAS NEEDED: in this case you need to edit a bit the command since there's a supplementary resource involved (the tunnel will be "compute node -> OPH 137.204.50.73 -> OPH 137.204.50.15 -> your PC", not just "OPH 137.204.50.73 -> OPH 137.204.50.15 -> your PC" anymore:
+5-1. Get the IP address of the compute node you're using (it's a local one, starting with "192.168", but it's expected).
+5-2. Launch SSH in this way: "ssh -L 6006:localhost:6006 -J YOUR_USERNAME@137.204.50.15,YOUR_USERNAME@137.204.50.73 YOUR_USERNAME@IP_ADDRESS_OF_THE_COMPUTE_NODE" (mind the comma)
+
+
+
+
