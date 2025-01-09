@@ -1,0 +1,9 @@
+| Command  | Purpose | Example Usage |
+| ------------- | ------------- | ------------- |
+|run  |  Executes the container’s %runscript | apptainer run my_container.sif |
+| Content Cell  | Content Cell  |               |
+
+run
+
+
+
