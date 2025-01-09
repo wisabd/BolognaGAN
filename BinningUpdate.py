@@ -50,8 +50,8 @@ def modify_binning_xml(input_file, output_file, hyperparameters):
 
 # Main function
 def main():
-    input_file = "C:/Users/Nasreen Akhtar/Downloads/binning (1).xml" 
-    output_dir = "C:/Users/Nasreen Akhtar/Downloads/configs"
+    input_file = "C:/Users/Wisal Abdullah/Downloads/binning (1).xml" 
+    output_dir = "C:/Users/Wisal Abdullah/Downloads/configs"
     os.makedirs(output_dir, exist_ok=True)
 
     # Generate all hyperparameter combinations
