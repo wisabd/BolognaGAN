@@ -10,5 +10,15 @@ Workflow:
 4. Iterate over hyperparameters. Optimise based on cross-validation results for chi-squared/ndf p-value.
 
 
+Overview of the Project
+
+On This Repo
+BoloGAN: contains the GAN training code;
+BoloGANtainer.def: the container recipe file.
+Not on This Repo
+BoloGANtainer.sif: the container itself;
+data: the folder with the training data.
+
+
 
 
