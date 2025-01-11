@@ -1,4 +1,4 @@
-The steps to perform hyperparameter tuning tasks are underlined as below:
+6The steps to perform hyperparameter tuning tasks are underlined as below:
 
 GOAL: The evaluation metrics of the cWGAN-GP model is the chi-squared/degrees of freedom, the p-value of the hypothesis that Geant4 and BoloGAN are the same. 
 
@@ -18,6 +18,17 @@ BoloGANtainer.def: the container recipe file.
 Not on This Repo
 BoloGANtainer.sif: the container itself;
 data: the folder with the training data.
+
+Data
+The data is provided by the ATLAS collaboration and is not available on this repository. It has a structure like the following:
+
+data
+├── csvFiles
+├── rootFiles
+└── binning.xml
+The csvFiles directory contains the CSV files with the training data.
+The rootFiles directory contains the ROOT files with the training data.
+The binning.xml file contains the binning information.
 
 
 
