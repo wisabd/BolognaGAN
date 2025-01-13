@@ -4,10 +4,9 @@ GOAL: The evaluation metrics of the cWGAN-GP model is the chi-squared/degrees of
 
 Workflow:
 
-1. Cross Validation: Divide the data into folds.
-2. Train and validate using chi sqaured/ndf and p-value on each fold. Aggregate metrics across folds.
+2. Train and validate using chi sqaured/ndf and p-value on each fold. Aggregate metrics.
 3. Tune regularization strengths during cross-validation. In our case, it is gradient penalty.
-4. Iterate over hyperparameters. Optimise based on cross-validation results for chi-squared/ndf p-value.
+4. Iterate over hyperparameters. 
 
 
 Overview of the Project
