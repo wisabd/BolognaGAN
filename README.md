@@ -1,12 +1,13 @@
 **Hyperparameter Optimization**
 
-GOAL: The evaluation metrics of the cWGAN-GP model is the chi-squared/degrees of freedom, the p-value of the hypothesis that Geant4 and BoloGAN are the same. 
+GOAL: The evaluation metric of the hyperparameter tuning of the cWGAN-GP model is the total χ² between Geant4 generated data and that from BoloGAN. 
 
 # Workflow:
 
-2. Train and validate using chi sqaured/ndf and p-value on each fold. Aggregate metrics.
-3. Tune regularization strengths during cross-validation. In our case, it is gradient penalty.
-4. Iterate over hyperparameters. 
+1. Train/test split the data.  
+2. Iterate over hyperparameters. 
+3. Evaluate and log the models' performances according to total χ² metric.
+4. The model with lowest χ² is the optimal configuration of hyperparameters.
 
 # Running Order
 
