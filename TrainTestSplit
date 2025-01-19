@@ -1,0 +1,45 @@
+import uproot
+import numpy as np
+import os
+import glob
+
+#Generate filenames with E values as powers of 2
+for E in [2**i for i in range(8, 23)]: # 2^8 = 256, 2^22 = 4194304
+    filename = f"C:/Users/Wisal Abdullah/Downloads/Data_BoloGAN/data/rootFiles/pions/pid211_E{E}_eta_20_25.root"
+
+# Define ROOT file pattern
+#root_files = glob.glob("pid211_E8192_eta_20_25_*.root")  # Adjust path if needed
+    tree_name = "rootTree;1"  # Replace with the actual TTree name
+
+    # Loop through each ROOT file
+    #for file_path in root_files:
+        # Open the ROOT file
+    with uproot.open(filename) as root_file:
+            # Load the tree
+        if tree_name not in root_file:
+                print(f"Skipping {filename}: TTree '{tree_name}' not found.")
+                continue
+
+        tree = root_file[tree_name]
+        data = tree.arrays(library="pd")  # Convert to Pandas DataFrame
+            
+            # Split into 90% train, 10% test
+        train_data = data.sample(frac=0.9, random_state=42)
+        test_data = data.drop(train_data.index)
+            
+            # Define output filenames
+        train_file = filename.replace(".root", "_train.root")
+        test_file = filename.replace(".root", "_test.root")
+
+            # Save the train and test sets back to ROOT files
+        with uproot.recreate(train_file) as train_root:
+            train_root[tree_name] = train_data
+
+        with uproot.recreate(test_file) as test_root:
+            test_root[tree_name] = test_data
+            
+        print(f"Processed: {filename} -> {train_file}, {test_file}")
+
+
+print("Done! All files split into 90% train and 10% test.")
+
