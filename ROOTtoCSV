@@ -1,0 +1,22 @@
+import uproot
+import pandas as pd
+
+# Load the ROOT file
+file_path = "C:/Users/Wisal Abdullah/Downloads/Data_BoloGAN/data/rootFiles/pions/pid211_E4194304_eta_20_25.root"  # Update with your actual file path
+
+# Open the ROOT file and list available keys
+with uproot.open(file_path) as file:
+    print(file.keys())  # Check available trees
+
+# Assuming the tree is named "myTree" (replace with the actual name from the print output)
+tree_name = "rootTree;1"
+
+# Read the tree
+with uproot.open(file_path)["rootTree;1"] as tree:
+    df = tree.arrays(library="pd")  # Convert to pandas DataFrame
+
+# Save to CSV
+csv_path = "C:/Users/Wisal Abdullah/Downloads/output.csv"
+df.to_csv(csv_path, index=False)
+
+print(f"CSV file saved as {csv_path}")
