@@ -1,0 +1,19 @@
+Use PuTTY to log in the LXPLUS, and grab its ip
+  ifconfig | grep "inet " | awk '{print $2}'
+
+Open a powershell and sign in LXPLUS using the following command:
+ 1.  ssh -L 6006:localhost:6006 -J usernamr@lxplus.cern.ch user@ip       In this way, what would be accessible on the node through port 6006 will be tunnelled to port 6006 of your PC. After doing this, open your PC web browser and go to "localhost:6006". You'll then be able to access Tensorboard, where you'll find useful plots that you can explore and interact with. Even though it seems to run on your local PC, you're interacting with the node (exactly like, when you're using SSH, you type commands on your PC but they run on the remote resource).
+ 2.  Once logged in, go to putty session and trace the directory with log files of tensorboard, make it executable as well.
+
+      for steps in 1 100 200 400 800 1600 3200; do
+          tensorboard --logdir /eos/user/a/username/RUN1M/tesi/matrix_steps_per_execution_${steps}/pions/All/20_25/logs/
+      done
+3. Set up environment:
+      a) Create a Python virtual environment: "python3 -m venv .tensorboard_venv"  This creates a virtual environment .tensorboard_venv
+      b) Activate the virtual environment with "source .tensorboard_venv/bin/activate"  Then it should appear ".(tensorboard_venv)" on the prompt
+      c) Install Tensorboard using "pip install tensorboard"
+           
+      After the first installation you'll always need to do "source .tensorboard_venv/bin/activate" in every new shell before using Tensorboard. When you want to leave the virtual environment, simply type "deactivate" ("(.tensorboard_venv)" will disappear).
+4. Run Tensorboard
+
+5. Variations in Tensorboard commands
