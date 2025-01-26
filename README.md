@@ -17,7 +17,7 @@ The binning.xml file contains the binning information.
    
 2. Define Hyperparameter space. Using Grid search algorithm to pass the hyperparameters to the binning.xml file.
    
-3. Run the model. Evaluate Tensorboard graphs of χ²/ndf, generator loss, discriminator loss.
+3. Run the model. Evaluate using visualizations of Tensorboard graphs of χ²/ndf, generator loss, discriminator loss.
    
 4. Detect the model performance, check for overfitting, regularize using suitable method if necessary.
    
