@@ -6,7 +6,10 @@ One distribution is energy distribution Geant4 from dataset  (csvFiles, rootFile
 <img width="522" alt="Screenshot 2025-02-18 060956" src="https://github.com/user-attachments/assets/7ad32fbe-d213-438d-9925-ff8e1b1205dc" />
 
 ## Dataset
-
+<img width="232" alt="Screenshot 2025-02-24 123837" src="https://github.com/user-attachments/assets/cfec9942-10c7-424a-ad78-d564bf65abcb" />
+<img width="252" alt="Screenshot 2025-02-24 123818" src="https://github.com/user-attachments/assets/fdb1228a-cf15-4a21-b7e3-e9f3a0b616f7" />
+<img width="173" alt="Screenshot 2025-02-24 123753" src="https://github.com/user-attachments/assets/b31ead50-5159-4b31-8786-ed3d2c426802" />
+<img width="280" alt="Screenshot 2025-02-24 123903" src="https://github.com/user-attachments/assets/7b5729a0-7ac9-4e03-91dc-f35ca6517001" />
 
 ## My task
 I optimized the following hyperparameters:
@@ -16,10 +19,7 @@ I optimized the following hyperparameters:
 - the gradient penalty of the model
 
 ## Results
-<img width="232" alt="Screenshot 2025-02-24 123837" src="https://github.com/user-attachments/assets/cfec9942-10c7-424a-ad78-d564bf65abcb" />
-<img width="252" alt="Screenshot 2025-02-24 123818" src="https://github.com/user-attachments/assets/fdb1228a-cf15-4a21-b7e3-e9f3a0b616f7" />
-<img width="173" alt="Screenshot 2025-02-24 123753" src="https://github.com/user-attachments/assets/b31ead50-5159-4b31-8786-ed3d2c426802" />
-<img width="280" alt="Screenshot 2025-02-24 123903" src="https://github.com/user-attachments/assets/7b5729a0-7ac9-4e03-91dc-f35ca6517001" />
+
 
 
 
