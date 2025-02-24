@@ -15,6 +15,14 @@ I optimized the following hyperparameters:
 - the learning rate of the generator discriminator
 - the gradient penalty of the model
 
+## Results
+<img width="232" alt="Screenshot 2025-02-24 123837" src="https://github.com/user-attachments/assets/cfec9942-10c7-424a-ad78-d564bf65abcb" />
+<img width="252" alt="Screenshot 2025-02-24 123818" src="https://github.com/user-attachments/assets/fdb1228a-cf15-4a21-b7e3-e9f3a0b616f7" />
+<img width="173" alt="Screenshot 2025-02-24 123753" src="https://github.com/user-attachments/assets/b31ead50-5159-4b31-8786-ed3d2c426802" />
+<img width="280" alt="Screenshot 2025-02-24 123903" src="https://github.com/user-attachments/assets/7b5729a0-7ac9-4e03-91dc-f35ca6517001" />
+
+
+
 ## Technologies used
 - Bash scripts for training on high performance computing systems at LXBATCH at CERN
 - Python for data analysis of csv, root, binning.xml files: matplotlib, uproot, pandas, numpy, tensorboard
