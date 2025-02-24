@@ -17,7 +17,7 @@ I optimized the following hyperparameters:
 - Bash scripts for training on high performance computing systems at LXBATCH at CERN
 - Python for data analysis of csv, root, binning.xml files: matplotlib, uproot, pandas, numpy, tensorboard
 - Singularity containerization
-- HTCondor scripting
+- HTCondor job submission at LXBATCH
 - LaTex
 
 ## Screenshots of the project
