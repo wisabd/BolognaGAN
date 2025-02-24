@@ -15,7 +15,7 @@ I optimized the following hyperparameters:
 
 ## Technologies used
 - Bash scripts for training on high performance computing systems at LXBATCH at CERN
-- Python for data analysis of csv, root, binning.xml files: matplotlib, uproot, pandas, numpy
+- Python for data analysis of csv, root, binning.xml files: matplotlib, uproot, pandas, numpy, tensorboard
 - Singularity containerization
 - HTCondor scripting
 - LaTex
