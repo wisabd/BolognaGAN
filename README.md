@@ -12,6 +12,10 @@ CSV Files
 ROOT files
 <img width="863" alt="image" src="https://github.com/user-attachments/assets/2031dc98-5d7d-4fb1-a4a3-3af9d24aaf41" />
 
+ROOT file structure
+<img width="252" alt="Screenshot 2025-02-24 123818" src="https://github.com/user-attachments/assets/0974bc35-bf02-4046-8034-297bf58a5dfe" />
+
+
 
 
 ## My task
