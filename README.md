@@ -6,7 +6,12 @@ One distribution is energy distribution Geant4 from dataset  (csvFiles, rootFile
 <img width="522" alt="Screenshot 2025-02-18 060956" src="https://github.com/user-attachments/assets/7ad32fbe-d213-438d-9925-ff8e1b1205dc" />
 
 ## Dataset
+CSV Files
 <img width="883" alt="image" src="https://github.com/user-attachments/assets/6b95da41-3acb-4e6c-a336-c383b4f1aa04" />
+
+ROOT files
+<img width="863" alt="image" src="https://github.com/user-attachments/assets/2031dc98-5d7d-4fb1-a4a3-3af9d24aaf41" />
+
 
 
 ## My task
