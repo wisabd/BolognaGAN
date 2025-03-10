@@ -47,9 +47,13 @@ I optimized the following hyperparameters:
 - LaTex
 
 ## Screenshots of the project
+Result of the model at the start of the oroject
 ![Best-reducedchi2-Pions](https://github.com/user-attachments/assets/cc81a3ae-6c27-48f7-b9f9-a07359e1f4dd)
-![imageData-High12](https://github.com/user-attachments/assets/f8bc903f-efcc-470b-9d3d-0f4102934e1a)
-![Loqw12F](https://github.com/user-attachments/assets/09fda5cd-c612-4019-8b18-1b243f18967b)
+
+Final result of the model after the project (Improvement: 28%)
+<img width="448" alt="Best-BigModel" src="https://github.com/user-attachments/assets/6ca5e76f-3342-41d1-aec4-ff2f8fd65742" />
+
+
 
 
 
