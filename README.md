@@ -29,10 +29,11 @@ ROOT file structure
 
 ## My task
 I optimized the following hyperparameters:
-- architecture of the generator (width and depth)
-- the latent space which is input into the generator
-- the learning rate of the generator discriminator
-- the gradient penalty of the model
+- Generator neural network nodes (width and depth)
+- Batch size
+- Discriminator/Generator ratio
+- Learning rate
+- Gradient Penalty (to mitigate overfitting)
 
 ## Results
 
