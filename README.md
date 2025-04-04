@@ -25,11 +25,11 @@ ROOT file structure
 
 
 ## A brief outline of BoloGAN
-- Model: conditional Wasserstein GAN with Gradient Penalty
-- cWGAN-GP model
-<img width="522" alt="Screenshot 2025-02-18 060956" src="https://github.com/user-attachments/assets/7ad32fbe-d213-438d-9925-ff8e1b1205dc" />
-- Loss function: <img width="135" alt="image" src="https://github.com/user-attachments/assets/bd062795-3394-4f93-8608-7403ed26755e" />
-- Final objective function after gradient penalty <img width="328" alt="image" src="https://github.com/user-attachments/assets/66ec8062-4de5-44df-8ff4-b67850604502" />
++ Model: conditional Wasserstein GAN with Gradient Penalty
++ cWGAN-GP model
++ <img width="522" alt="Screenshot 2025-02-18 060956" src="https://github.com/user-attachments/assets/7ad32fbe-d213-438d-9925-ff8e1b1205dc" />
++ Loss function: <img width="135" alt="image" src="https://github.com/user-attachments/assets/bd062795-3394-4f93-8608-7403ed26755e" />
++ Final objective function after gradient penalty <img width="328" alt="image" src="https://github.com/user-attachments/assets/66ec8062-4de5-44df-8ff4-b67850604502" />
 
 ## Methodology
 
@@ -47,7 +47,7 @@ ROOT file structure
   
 + Pass hyperparameters through binning.xml file to the BoloGAN model
 
-+Execute Bash scripts to run train.py to define data, user and home directories along with particle id, η range, epoch numbers and the binning.xml file
++ Execute Bash scripts to run train.py to define data, user and home directories along with particle id, η range, epoch numbers and the binning.xml file
 
 + Utilize LXPLUS batch at CERN and conduct runs by submitting jobs to HTCondor pool, using NVIDIA H100/A100/V100 GPUs
 
