@@ -68,6 +68,10 @@ I optimized the following hyperparameters:
 - Gradient Penalty (to mitigate overfitting)
 
 ## Screenshots of the project
+
++ These are chi squared results with the red graphs representing normalized energy distribution with hits on yaxis from Geant4 full simlation and the black graphs representingthat from BoloGAN.
++ The final chi squared is average of all the chi square values in the subplots of all 15 energy levels
+  
 Result of the model at the start of the oroject
 ![Best-reducedchi2-Pions](https://github.com/user-attachments/assets/cc81a3ae-6c27-48f7-b9f9-a07359e1f4dd)
 
